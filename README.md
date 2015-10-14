@@ -1,4 +1,4 @@
-## Synopsis ##
+# Synopsis #
 
 Generic AJAX methods of get and set (GET and POST) that get attached to the pix namespace. Once it has been added to the Gruntfile as referenced below, you will have access to the object under pix.ajax.
 
