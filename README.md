@@ -1,8 +1,14 @@
-## Synopsis
+## Synopsis ##
 
-This module sets up grunt on any Magento installation. It will include a Gruntfile and install some standard plguins to compile and minify javascript and css. It will optionally create a sass folder and move your css files into it. In the future we will include the ability to use this for non-Magento projects.  
+Generic AJAX methods of get and set (GET and POST) that get attached to the pix namespace. Once it has been added to the Gruntfile as referenced below, you will have access to the object under pix.ajax.
 
-## Installation
+### Methods ###
+#### get ####
+* Type: Function
+* Params: options, success function, failure function
+** Options: {dataType: 'json', url: null, data: null}
+
+## Installation ##
 1. Run npm install "git+ssh://git@bitbucket.org/pixafymodules/ajax-method.git"
 2. Add 'node_modules/ajax-methods/ajax-methods.js' to your Gruntfile in the uglify config.
 
