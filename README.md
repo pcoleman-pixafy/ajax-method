@@ -5,8 +5,19 @@ Generic AJAX methods of get and set (GET and POST) that get attached to the pix 
 ### Methods ###
 #### get ####
 * Type: Function
-* Params: options, success function, failure function
-** Options: {dataType: 'json', url: null, data: null}
++ Params: options, success function, failure function
+    + Options:
+        * dataType: 'json'
+        * url: null
+        * data: null
+#### set ####
+* Type: Function
++ Params: options, success function, failure function
+    + Options:
+        * dataType: 'json'
+        * url: null
+        * data: null
+
 
 ## Installation ##
 1. Run npm install "git+ssh://git@bitbucket.org/pixafymodules/ajax-method.git"
