@@ -18,7 +18,7 @@ modules: {
         {
             src: [
                 magento_jsFolder+'modules/*.js',
-                'node_modules/ajax-methods/ajax-methods.js'
+                **'node_modules/ajax-methods/ajax-methods.js'**
             ],
             dest: magento_jsFolder+destFolder+'modules.min.js'
         }
