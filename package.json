@@ -12,8 +12,5 @@
   },
   "author": "pixafymodules",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/pixafymodules/ajax-method#readme",
-  "dependencies": {
-    "private-repo": "git+ssh://git@bitbucket.org/pixafymodules/ajax-method.git"
-  }
+  "homepage": "https://bitbucket.org/pixafymodules/ajax-method#readme"
 }
