@@ -1,0 +1,4 @@
+.gitignore
+.jshintrc
+ajax-methods.js
+package.json

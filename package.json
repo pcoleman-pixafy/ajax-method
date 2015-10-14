@@ -1,0 +1,19 @@
+{
+  "name": "ajax-methods",
+  "version": "1.0.0",
+  "description": "Ajax methods for magento and wordpress builds",
+  "main": "ajax-methods.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/pixafymodules/ajax-methods.git"
+  },
+  "author": "Pixafy",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/pixafymodules/ajax-methods#readme",
+  "dependencies": {
+    "private-repo": "git+ssh://git@bitbucket.org/pixafymodules/ajax-methods.git"
+  }
+}
