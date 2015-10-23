@@ -36,14 +36,14 @@ Generic AJAX methods of get and set (GET and POST) that get attached to the pix 
 #!javascript
 modules: {
     options: {
-        mangle: globalMangle,
+        mangle: true,
         sourceMap: true
     },
     files: [
         {
             src: [
                 magento_jsFolder+'modules/*.js',
-                **'node_modules/ajax-methods/ajax-methods.js'**
+                'node_modules/ajax-methods/ajax-methods.js'
             ],
             dest: magento_jsFolder+destFolder+'modules.min.js'
         }
@@ -51,6 +51,8 @@ modules: {
 }
 
 ```
+
+3. Run 'grunt uglify' so that the file gets included in your minified module. 
 
 ## Contributors
 
