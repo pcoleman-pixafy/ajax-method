@@ -1,6 +1,6 @@
 {
   "name": "pix-ajax-method",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Ajax methods for magento and wordpress builds",
   "main": "ajax-methods.js",
   "scripts": {
