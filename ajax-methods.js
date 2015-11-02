@@ -5,30 +5,28 @@
  * Final fallback puts it directly on the object.
  */
 ;(function(root, name, definition, namespace) {
-    if (typeof define === 'function' && define.amd) {
+    if(!!namespace) {
+        root[namespace][name] = !!root[namespace][name] ? root[namespace][name] : {};
+        root[namespace][name] = definition();
+    }
+    else if (typeof define === 'function' && define.amd) {
         define([], definition);
     }
     else if (typeof module === 'object' && module.exports) {
         module.exports = definition();
     }
-    else if(!!namespace) {
-        root[namespace][name] = !!root[namespace][name] ? root[namespace][name] : {};
-        root[namespace][name] = definition();
-    }
     else {
         root[name] = definition();
     }
-})(this, 'ajax', function pixAjax(undefined) {
+})(this, 'ajax', function pixAjax() {
     "use strict";
  
-    var jQuery = !!jQuery ? jQuery : require('jquery'); //need a better solution than just checking if jquery exists
-
     /**
      * [pixAjax - This sends an XHR with custom params]
      * @param  {[object]} options [parameter object with settings for the XHR]
      */
     var ajax = (function(){
-        var $j = jQuery.noConflict();
+        var $j = !!$j ? $j : jQuery.noConflict();
         /**
          * defaults - default Ajax settings.
          * @type {Object}
@@ -111,7 +109,7 @@
             get: _get,
             set: _set
         };
-    });
+    })();
 
     /*function ajaxUserData(){
         //"use strict";
