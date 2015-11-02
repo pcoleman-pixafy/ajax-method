@@ -35,16 +35,16 @@ Generic AJAX methods of get and set (GET and POST) that get attached to the pix 
 
 ```
 #!javascript
-modules: {
+node_modules: {
     options: {
-        mangle: true,
+        mangle: false,
         sourceMap: true
     },
     files: [
         {
             src: [
-                magento_jsFolder+'modules/*.js',
-                'node_modules/ajax-methods/ajax-methods.js'
+                'node_modules/pix-**/*.js',
+                '!node_modules/pix-**/Gruntfile.js'
             ],
             dest: magento_jsFolder+destFolder+'modules.min.js'
         }
