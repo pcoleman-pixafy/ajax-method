@@ -1,29 +1,34 @@
 /**
- * @param  {[type]} $j        jQuery.noConflict()
- * @param  {[type]} window    instance of window
- * @param  {[type]} document  window.document
- * @param  {[type]} pix       window.pix
- * @param  {[type]} undefined
- * Encapsulate the code in modern standards strict mode self invoking function. 
+ * [pixAjax - This sends an XHR with custom params]
+ * Modular pattern to make this work with the most common module definition patterns. 
+ * Included optional namespace param for when attaching to the window object.
+ * Final fallback puts it directly on the object.
  */
-;(function(window, document, $j, pix, undefined) { 
+;(function(root, name, definition, namespace) {
+    if (typeof define === 'function' && define.amd) {
+        define([], definition);
+    }
+    else if (typeof module === 'object' && module.exports) {
+        module.exports = definition();
+    }
+    else if(!!namespace) {
+        root[namespace][name] = !!root[namespace][name] ? root[namespace][name] : {};
+        root[namespace][name] = definition();
+    }
+    else {
+        root[name] = definition();
+    }
+})(this, 'ajax', function pixAjax(undefined) {
     "use strict";
  
-    pix = pix || window.pix || {}; //make sure that pix namespace is defined.
-    pix.modules = pix.modules || {}; //add modules list
-
-    pix.$win = pix.$win || $j(window);
-    pix.$doc = pix.$doc || $j(document); 
-    pix.$body = !!pix.$body &&  !!pix.$body.length ? pix.$body : $j(document.body);
-
-    window.pix.dataReadyFired = false;
+    var jQuery = !!jQuery ? jQuery : require('jquery'); //need a better solution than just checking if jquery exists
 
     /**
-     * [ajax - This sends an XHR with custom params]
+     * [pixAjax - This sends an XHR with custom params]
      * @param  {[object]} options [parameter object with settings for the XHR]
      */
-    pix.ajax = (function(){
-
+    var ajax = (function(){
+        var $j = jQuery.noConflict();
         /**
          * defaults - default Ajax settings.
          * @type {Object}
@@ -106,10 +111,11 @@
             get: _get,
             set: _set
         };
-    })();
+    });
 
     /*function ajaxUserData(){
         //"use strict";
+        window.pix.dataReadyFired = false;
         pix.ajax.get({
             type:   'GET',
             url:    pix.siteUrl+"pixcore/ajax/user"
@@ -122,7 +128,5 @@
             window.pix.dataReadyFired = true;
         });
     };*/
-
-    window.pix = pix; //add back to global scope
-
-})(this, this.document, jQuery.noConflict(), this.pix);
+    return ajax;
+}, 'pix');

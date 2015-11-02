@@ -12,5 +12,8 @@
   },
   "author": "pixafymodules",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/pixafymodules/ajax-method#readme"
+  "homepage": "https://bitbucket.org/pixafymodules/ajax-method#readme",
+  "dependencies": {
+    "jquery": "^1.11.1"
+  }
 }
