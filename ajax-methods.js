@@ -5,15 +5,15 @@
  * Final fallback puts it directly on the object.
  */
 ;(function(root, name, definition, namespace) {
-    if(!!namespace) {
-        root[namespace][name] = !!root[namespace][name] ? root[namespace][name] : {};
-        root[namespace][name] = definition();
-    }
-    else if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
         define([], definition);
     }
     else if (typeof module === 'object' && module.exports) {
         module.exports = definition();
+    }
+    else if(!!namespace) {
+        root[namespace] = !!root[namespace] ? root[namespace] : {};
+        root[namespace][name] = definition();
     }
     else {
         root[name] = definition();
