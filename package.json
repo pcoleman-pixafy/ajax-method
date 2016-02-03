@@ -2,9 +2,11 @@
   "name": "pix-ajax-method",
   "version": "1.1.2",
   "description": "Ajax methods for magento and wordpress builds",
-  "main": "ajax-methods.js",
+  "main": "pix-ajax.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:js",
+    "build:js": "browserify ./src/*.js -t [ babelify ] --outfile pix-ajax.js",
+    "build:watch": "watch \"npm run build\" ./src"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,10 @@
   "homepage": "https://bitbucket.org/pixafymodules/pix-ajax-method#readme",
   "dependencies": {
     "jquery": "^1.11.1"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "watch": "^0.17.1"
   }
 }
