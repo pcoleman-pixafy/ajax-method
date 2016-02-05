@@ -4,7 +4,7 @@
  * @param  {[object]} options [parameter object with settings for the XHR]
  */
 
-module.exports = (function pixAjax(){
+export default (function(){
     "use strict";
 
     var $j = require('jQuery');
@@ -90,4 +90,5 @@ module.exports = (function pixAjax(){
         get: _get,
         set: _set
     };
-})();
+
+}());

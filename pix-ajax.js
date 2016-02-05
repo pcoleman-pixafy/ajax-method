@@ -10309,13 +10309,18 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 /**
  * [pixAjax - This sends an XHR with custom params]
  * Modular pattern to make this work with node.js module pattern.
  * @param  {[object]} options [parameter object with settings for the XHR]
  */
 
-module.exports = function pixAjax() {
+exports.default = function () {
     "use strict";
 
     var $j = require('jQuery');
@@ -10334,7 +10339,7 @@ module.exports = function pixAjax() {
      * logback - default callback function for Ajax calls
      * @param  {Object / HTML / String} data - data returned via Ajax
      */
-    var logback = function (data) {
+    var logback = function logback(data) {
         console.log(data);
     };
 
@@ -10343,7 +10348,7 @@ module.exports = function pixAjax() {
      * @param  {String} textStatus - string description of error.
      * @param  {Object} errorThrown - Object holding the error
      */
-    var failback = function (textStatus, errorThrown) {
+    var failback = function failback(textStatus, errorThrown) {
         console.error(textStatus);
         console.error(errorThrown);
     };
@@ -10353,7 +10358,7 @@ module.exports = function pixAjax() {
      * @param  {String} type GET or POST
      * @return {Function} generated function
      */
-    var genericAjax = function (type) {
+    var genericAjax = function genericAjax(type) {
         return function (options, fn, failFn) {
             var opts = $j.extend(true, {}, defaults, options);
             opts.type = !!type ? type : opts.type;

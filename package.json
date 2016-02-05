@@ -5,7 +5,7 @@
   "main": "pix-ajax.js",
   "scripts": {
     "build": "npm run build:js",
-    "build:js": "browserify ./src/*.js -t [ babelify ] --outfile pix-ajax.js",
+    "build:js": "browserify ./src/*.js -t [ babelify --presets [es2015] ] --outfile pix-ajax.js",
     "build:watch": "watch \"npm run build\" ./src"
   },
   "repository": {
@@ -19,6 +19,7 @@
     "jquery": "^1.11.1"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "watch": "^0.17.1"
