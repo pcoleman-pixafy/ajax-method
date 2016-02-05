@@ -10311,16 +10311,14 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 /**
  * [pixAjax - This sends an XHR with custom params]
  * Modular pattern to make this work with node.js module pattern.
  * @param  {[object]} options [parameter object with settings for the XHR]
  */
+module.exports = pixAjax;
 
-exports.default = function () {
+function pixAjax() {
     "use strict";
 
     var $j = require('jQuery');
@@ -10403,6 +10401,6 @@ exports.default = function () {
         get: _get,
         set: _set
     };
-}();
+};
 
 },{"jQuery":1}]},{},[2]);
