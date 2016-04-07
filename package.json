@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/pixafymodules/pix-ajax-method.git"
+    "url": "git+ssh://git@bitbucket.org/pixafy/pix-ajax-method.git"
   },
   "author": "pixafymodules",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/pixafymodules/pix-ajax-method#readme",
+  "homepage": "https://bitbucket.org/pixafy/pix-ajax-method#readme",
   "dependencies": {
     "jquery": "^1.11.1"
   },
