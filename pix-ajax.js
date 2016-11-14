@@ -10311,21 +10311,25 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
-/**
- * [pixAjax - This sends an XHR with custom params]
- * Modular pattern to make this work with node.js module pattern.
- * @param  {[object]} options [parameter object with settings for the XHR]
- */
-module.exports = pixAjax;
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = pixAjax;
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function pixAjax() {
     "use strict";
 
-    var $j = require('jQuery');
     /**
      * defaults - default Ajax settings.
      * @type {Object}
      */
+
     var defaults = {
         type: 'GET',
         dataType: 'json',
@@ -10358,14 +10362,14 @@ function pixAjax() {
      */
     var genericAjax = function genericAjax(type) {
         return function (options, fn, failFn) {
-            var opts = $j.extend(true, {}, defaults, options);
+            var opts = _jquery2.default.extend(true, {}, defaults, options);
             opts.type = !!type ? type : opts.type;
 
             fn = !!fn && fn instanceof Function ? fn : logback;
             failFn = !!failFn && failFn instanceof Function ? failFn : failback;
 
             if (!!opts.url) {
-                $j.ajax(opts).then(
+                _jquery2.default.ajax(opts).then(
                 //succes / done deffered promise callback
                 function (data, textStatus, jqXHR) {
                     if (!!data) {
@@ -10401,6 +10405,10 @@ function pixAjax() {
         get: _get,
         set: _set
     };
-};
+} /**
+   * [pixAjax - This sends an XHR with custom params]
+   * Modular pattern to make this work with node.js module pattern.
+   * @param  {[object]} options [parameter object with settings for the XHR]
+   */
 
-},{"jQuery":1}]},{},[2]);
+},{"jquery":1}]},{},[2]);

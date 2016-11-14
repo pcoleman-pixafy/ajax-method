@@ -3,12 +3,11 @@
  * Modular pattern to make this work with node.js module pattern.
  * @param  {[object]} options [parameter object with settings for the XHR]
  */
-module.exports = pixAjax;
+import $j from 'jquery';
 
-function pixAjax(){
+export default function pixAjax(){
     "use strict";
-
-    var $j = require('jQuery');
+    
     /**
      * defaults - default Ajax settings.
      * @type {Object}
@@ -91,4 +90,4 @@ function pixAjax(){
         get: _get,
         set: _set
     };
-};
+}
